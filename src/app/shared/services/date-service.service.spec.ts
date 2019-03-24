@@ -49,31 +49,31 @@ describe('DateServiceService', () => {
     });
   });
 
-  describe('getFirstDayForMonth()', () => {
+  describe('getFirstDayOfMonth()', () => {
     describe('When normal Year', () => {
       it(`should be 6 if year = 2011 and month = january`, () => {
-        expect(service.getFirstDayForMonth(1, 2011)).toEqual(6);
+        expect(service.getFirstDayOfMonth(1, 2011)).toEqual(6);
       });
 
       it(`should be 2 if year = 2011 and month = Feb`, () => {
-        expect(service.getFirstDayForMonth(2, 2011)).toEqual(2);
+        expect(service.getFirstDayOfMonth(2, 2011)).toEqual(2);
       });
 
       it(`should be 2 if year = 2011 and month = March`, () => {
-        expect(service.getFirstDayForMonth(3, 2011)).toEqual(2);
+        expect(service.getFirstDayOfMonth(3, 2011)).toEqual(2);
       });
 
       it(`should be 6 if year = 2011 and month = october`, () => {
-        expect(service.getFirstDayForMonth(10, 2011)).toEqual(6);
+        expect(service.getFirstDayOfMonth(10, 2011)).toEqual(6);
       });
     });
 
     describe('When Leap Year', () => {
       it(`should be 6 if year = 2012 and month = january`, () => {
-        expect(service.getFirstDayForMonth(1, 2012)).toEqual(0);
+        expect(service.getFirstDayOfMonth(1, 2012)).toEqual(0);
       });
       it(`should be 6 if year = 2012 and month = Feb`, () => {
-        expect(service.getFirstDayForMonth(2, 2012)).toEqual(3);
+        expect(service.getFirstDayOfMonth(2, 2012)).toEqual(3);
       });
     });
   });
@@ -95,9 +95,4 @@ describe('DateServiceService', () => {
       expect(service.getDay(29, 12, 2017)).toEqual('Friday');
     });
   });
-
-  // it('should be equal Monday', () => {
-  //   let result = service.getDay('Jan 1, 1900');
-  //   expect(result).toBe('Monday');
-  // });
 });

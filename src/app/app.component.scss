@@ -1,0 +1,17 @@
+.form-controls {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  &__input {
+    margin-right: 5px;
+    select {
+      &.ng-invalid.ng-touched {
+        border-color: red;
+      }
+    }
+  }
+}
+
+.result {
+  color: green;
+}

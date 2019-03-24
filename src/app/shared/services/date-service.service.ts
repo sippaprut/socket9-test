@@ -30,10 +30,10 @@ export class DateServiceService {
     );
   }
 
-  getFirstDayForMonth(monthIndex: number, year: number): number {
+  getFirstDayOfMonth(monthIndex: number, year: number): number {
     let firstDay = this.getFirstDayForYear(year);
     let firstDayMonth: number = firstDay;
-    let dayInWeeks: number = 7;
+    const dayInWeeks: number = 7;
     let month: number = 1;
 
     while (month < monthIndex) {
@@ -57,7 +57,7 @@ export class DateServiceService {
   getDay(date: number, month: number, year: number): string {
     const startDate: number = 1;
     const weeks: number = 7;
-    let dayOfMonth: number = this.getFirstDayForMonth(month, year);
+    let dayOfMonth: number = this.getFirstDayOfMonth(month, year);
     if (date === 1) {
       return DAYS[dayOfMonth];
     }
@@ -69,31 +69,5 @@ export class DateServiceService {
     }
 
     return DAYS[dayIndex];
-
-    // //Calulate by date + first day of month + first year of year
-    // let dayIndex =
-    //   date +
-    //   this.getFirstDayForMonth(month, year) +
-    //   this.getFirstDayForYear(year);
-
-    // if (!DAYS[dayIndex]) {
-    //   return false;
-    // }
-
-    // return DAYS[dayIndex];
-    // const days = [
-    //   'Sunday',
-    //   'Monday',
-    //   'Tuesday',
-    //   'Wednesday',
-    //   'Thursday',
-    //   'Friday',
-    //   'Saturday'
-    // ];
-
-    // let indexDate: number = new Date(date.toString()).getDay();
-    // return new Date(date.toString()).toLocaleDateString('en-us', {
-    //   weekday: 'long'
-    // });
   }
 }
