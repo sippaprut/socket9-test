@@ -94,5 +94,9 @@ describe('DateServiceService', () => {
     it(`should be Friday if date equal 29 December 2017`, () => {
       expect(service.getDay(29, 12, 2017)).toEqual('Friday');
     });
+
+    it(`should be 6 if year = 2012 and month = Feb`, () => {
+      expect(service.getDay(5, 2, 2012)).toEqual('Sunday');
+    });
   });
 });
